@@ -35,18 +35,21 @@ class newCorpusTrainer(trainers.Trainer):
                     )
 
                     previous_statement_line = []
+                    statement_line = []
 
                     for line in conversation:
                         for text in line:
                             statement = self.get_or_create(text)
                             statement.add_tags(corpus.categories)
 
+                            statement_line.append(statement.text)
+
                             if previous_statement_line != []:
                                 for previous_statement_text in previous_statement_line:
                                     statement.add_response(
                                         Response(previous_statement_text)
                                     )
-                        previous_statement_line = []
-                        for text in line:
-                            previous_statement_line.append(text)
-                        self.storage.update(statement)
+                            self.storage.update(statement)
+                            
+                        previous_statement_line = statement_line
+                        statement_line = []
