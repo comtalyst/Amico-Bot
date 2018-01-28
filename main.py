@@ -33,7 +33,7 @@ chatbot = ChatBot(
 #trainBig(chatbot)
 #trainCorpus(chatbot)
 trainNew(chatbot)
-trainList(chatbot,listTrainingData)
+#trainList(chatbot,listTrainingData)
 print("\nReady!")
 while(True):
     try:
