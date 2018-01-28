@@ -11,8 +11,8 @@ def trainCorpus(chatbot):
 
 def trainNew(chatbot):
     chatbot.set_trainer(newCorpusTrainer)
-    #chatbot.train("./corpus/chatterbot_corpus/english/");
-    chatbot.train("./corpus/test/test.yml");
+    #chatbot.train("./corpus/test/test.yml");
+    chatbot.train("./corpus/th-TH/cp.yml");
 
 def trainList(chatbot,listTrainingData):
     chatbot.set_trainer(ListTrainer)
@@ -27,7 +27,7 @@ listTrainingData = [
     u"Hello, Master!"
 ]
 chatbot = ChatBot(
-    "Test",
+    "ami",
     #read_only=True,
 )
 #trainBig(chatbot)
